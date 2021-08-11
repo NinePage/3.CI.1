@@ -45,13 +45,28 @@
                         </goals>
                     </execution>
                     <execution>
-                        <id>report</id>
-                        <phase>verify</phase>
+                        <id>check</id>
                         <goals>
-                            <goal>report</goal>
+                            <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <rules>
+                        <rules>
+                            <rule>
+                                <element>BUNDLE</element>
+                                <limits>
+                                    <limit>
+                                        <counter>INSTRUCTION</counter>
+                                        <value>COVEREDRATIO</value>
+                                        <minimum>1.0</minimum>
+                                    </limit>
+                                </limits>
+                            </rule>
+                        </rules>
+                    </rules>
+                </configuration>
             </plugin>
         </plugins>
     </build>
